@@ -36,3 +36,9 @@ stages:
         dockerfile: $(dockerfilePath)
         tags: |
           $(tag)
+
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Free Trial(1f7829e2-e872-4691-a244-255c9b1f7d61)'
+        KeyVaultName: 'KevinVoggyKeyVault'
+        SecretsFilter: '*'
